@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Basic Example</title>
+	<style>
+		body {
+			height: 100%;
+			min-height: 100%;
+		}
+
+		.container {
+			height: 200%;
+		}
+		.box {
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			position: absolute;
+		}
+		.box-1 {
+			background-color: navy;
+			top: 10px;
+		}
+		.box-2 {
+			background-color: green;
+			top: 70px;
+		}
+		.box-3 {
+			background-color: purple;
+			top: 130px;
+		}
+		#toggle {
+			position: fixed;
+			right: 10px;
+			top: 10px;
+		}
+		.stats {
+			text-align: right;
+			position: fixed;
+			right: 10px;
+			top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box box-1"></div>
+		<div class="box box-2"></div>
+		<div class="box box-3"></div>
+	</div>
+	<div class="stats">
+		<div class="report report-1">Visible</div>
+		<div class="report report-2">Visible</div>
+		<div class="report report-3">Visible</div>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="../in-viewport.js"></script>
+	<script>
+
+		var element1 = InViewport.track($('.box-1'), {
+			onEnter: function($el) {
+				$('.report-1').html('Visible');
+			},
+			onLeave: function($el) {
+				$('.report-1').html('Not Visible');
+			}
+		});
+
+		var element2 = InViewport.track($('.box-2'), {
+			onEnter: function($el) {
+				$('.report-2').html('Visible');
+			},
+			onLeave: function($el) {
+				$('.report-2').html('Not Visible');
+			}
+		});
+
+		var element3 = InViewport.track($('.box-3'), {
+			onEnter: function($el) {
+				$('.report-3').html('Visible');
+			},
+			onLeave: function($el) {
+				$('.report-3').html('Not Visible');
+			}
+		});
+		console.log(element1);
+
+	</script>
+</body>
+</html>
