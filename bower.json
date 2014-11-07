@@ -1,7 +1,7 @@
 {
   "name": "in-viewport",
   "main": "in-viewport.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/isuttell/in-viewport",
   "authors": [
     "Isaac Suttell <isaac@isaacsuttell.com>"
