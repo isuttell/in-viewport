@@ -1,15 +1,15 @@
-/*!
-|--------------------------------------------------------------------------
-| In Viewport
-|--------------------------------------------------------------------------
-| Checks to see if an element is in the viewport
+/**
+ * In Viewport
+ * -----------------------------------------------------------------------------
+ * Checks to see if an element is visible and provides events for when it
+ * leaves or enters
 */
 
 (function(root, factory) {
   'use strict';
   if (typeof define === 'function' && typeof define.amd === 'object') {
     define(['exports'], function(exports) {
-      root.InViewport = factory(root, exports);
+      return factory(root, exports);
     });
   } else {
     root.InViewport = factory(root, {});
@@ -44,12 +44,14 @@
 
   /**
    * An array of Elements to track
+   *
    * @type {Array}
    */
   InViewport.elements = [];
 
   /**
    * Creates an Element and tracks its visibility
+   *
    * @param {object}  el      Javascript element
    * @param {objects} options optional options see defaults for specifics
    *
@@ -70,16 +72,18 @@
   };
 
   /**
-   * Scroll Throttle
+   * Scroll Throttle time in ms
+   *
    * @type {Number}
    */
   InViewport.throttle = 100;
 
   /**
    * Only run scroll event when we're not waiting
+   *
    * @type {Boolean}
    */
-  var waiting = false;
+  var _waiting = false;
 
   /**
    * Add Scroll Listenering
@@ -91,8 +95,8 @@
    */
   function throttleScroll() {
     /*jshint validthis:true */
-    if (false === waiting) {
-      waiting = true;
+    if (false === _waiting) {
+      _waiting = true;
       setTimeout(scrollEvent.bind(this), InViewport.throttle);
     }
   }
@@ -102,7 +106,7 @@
    */
   function scrollEvent() {
     /*jshint validthis:true */
-    waiting = false;
+    _waiting = false;
     for (var i = 0; i < this.elements.length; i++) {
       // Update each element
       this.elements[i].update.apply(this.elements[i]);
@@ -111,6 +115,7 @@
 
   /**
    * Element Constructor
+   *
    * @param {Object} el      JS element or jQuery element
    * @param {Object} options (optional)
    */
@@ -131,6 +136,7 @@
 
   /**
    * Is the Element visible in the viewport?
+   *
    * @type {Boolean}
    */
   Element.prototype.visible = null;
@@ -207,6 +213,7 @@
 
   /**
    * The meat and bones. Determine if the element is visible or not
+   *
    * @return {boolean}
    */
   function inInViewport(el, viewportFactor) {
