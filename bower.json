@@ -16,6 +16,7 @@
     "tests",
     ".gitignore",
     ".jshintrc",
+    ".jscsrc",
     ".travis.yml",
     "Gruntfile.js",
     "package.json"
