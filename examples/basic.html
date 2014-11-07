@@ -16,15 +16,15 @@
 			background-color: red;
 			position: absolute;
 		}
-		.box-1 {
+		#box-1 {
 			background-color: navy;
 			top: 10px;
 		}
-		.box-2 {
+		#box-2 {
 			background-color: green;
 			top: 70px;
 		}
-		.box-3 {
+		#box-3 {
 			background-color: purple;
 			top: 130px;
 		}
@@ -43,46 +43,44 @@
 </head>
 <body>
 	<div class="container">
-		<div class="box box-1"></div>
-		<div class="box box-2"></div>
-		<div class="box box-3"></div>
+		<div id="box-1" class="box"></div>
+		<div id="box-2" class="box"></div>
+		<div id="box-3" class="box"></div>
 	</div>
 	<div class="stats">
-		<div class="report report-1">Visible</div>
-		<div class="report report-2">Visible</div>
-		<div class="report report-3">Visible</div>
+		<div id="report-1" class="report">Visible</div>
+		<div id="report-2" class="report">Visible</div>
+		<div id="report-3" class="report">Visible</div>
 	</div>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 	<script src="../in-viewport.js"></script>
 	<script>
 
-		var element1 = InViewport.track($('.box-1'), {
+		var element1 = InViewport.track(document.getElementById('box-1'), {
 			onEnter: function(el) {
-				$('.report-1').html('Visible');
+				document.getElementById('report-1').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
-				$('.report-1').html('Not Visible');
+				document.getElementById('report-1').innerHTML = 'Not Visible';
 			}
 		});
 
-		var element2 = InViewport.track($('.box-2'), {
+		var element2 = InViewport.track(document.getElementById('box-2'), {
 			onEnter: function(el) {
-				$('.report-2').html('Visible');
+				document.getElementById('report-2').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
-				$('.report-2').html('Not Visible');
+				document.getElementById('report-2').innerHTML = 'Not Visible';
 			}
 		});
 
-		var element3 = InViewport.track($('.box-3'), {
+		var element3 = InViewport.track(document.getElementById('box-3'), {
 			onEnter: function(el) {
-				$('.report-3').html('Visible');
+				document.getElementById('report-3').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
-				$('.report-3').html('Not Visible');
+				document.getElementById('report-3').innerHTML = 'Not Visible';
 			}
 		});
-		console.log(element1);
 
 	</script>
 </body>
