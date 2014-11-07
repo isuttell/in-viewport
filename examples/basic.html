@@ -15,6 +15,11 @@
 			height: 50px;
 			background-color: red;
 			position: absolute;
+			-webkit-transition: all 2s ease;
+			-moz-transition: all 2s ease;
+			-ms-transition: all 2s ease;
+			transition: all 2s ease;
+			opacity: 0;
 		}
 		#box-1 {
 			background-color: navy;
@@ -57,27 +62,33 @@
 
 		var element1 = InViewport.track(document.getElementById('box-1'), {
 			onEnter: function(el) {
+				this.el.style.opacity = 1;
 				document.getElementById('report-1').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
+				this.el.style.opacity = 0;
 				document.getElementById('report-1').innerHTML = 'Not Visible';
 			}
 		});
 
 		var element2 = InViewport.track(document.getElementById('box-2'), {
 			onEnter: function(el) {
+				this.el.style.opacity = 1;
 				document.getElementById('report-2').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
+				this.el.style.opacity = 0;
 				document.getElementById('report-2').innerHTML = 'Not Visible';
 			}
 		});
 
 		var element3 = InViewport.track(document.getElementById('box-3'), {
 			onEnter: function(el) {
+				this.el.style.opacity = 1;
 				document.getElementById('report-3').innerHTML = 'Visible';
 			},
 			onLeave: function(el) {
+				this.el.style.opacity = 0;
 				document.getElementById('report-3').innerHTML = 'Not Visible';
 			}
 		});
