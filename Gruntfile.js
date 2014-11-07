@@ -48,7 +48,24 @@ module.exports = function (grunt)
                 }
             }
         },
+        jscs: {
+            options: {
+                config: ".jscsrc"
+            },
+            default: {
+                files: {
+                  src: ['in-viewport.js']
+                }
+            },
+        },
         watch: {
+            options: {
+                interrupt: true // Interrupt any running tasks on save
+            },
+            js: {
+                files: ['in-viewport.js', 'jshint', 'jsvalidate'],
+                tasks: ['jscs']
+            },
             karma: {
                 files: ['in-viewport.js', 'tests/specs/**/*.js'],
                 tasks: ['karma:watch:run']
