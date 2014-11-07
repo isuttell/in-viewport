@@ -29,6 +29,7 @@
     "karma-jasmine": "~0.1.5",
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-safari-launcher": "^0.1.1",
-    "karma-story-reporter": "~0.2.2"
+    "karma-story-reporter": "~0.2.2",
+    "coveralls": "^2.11.2"
   }
 }
