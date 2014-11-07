@@ -117,8 +117,9 @@
      */
     function Element(el, options) {
 
-        if (typeof $ !== 'undefined' && el instanceof $)
+        if (typeof window.$ !== 'undefined' && el instanceof window.$)
         {
+            this.$el = el;
             this.el = el[0];
         }
         else
