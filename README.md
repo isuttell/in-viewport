@@ -5,6 +5,7 @@ Tracks whether an element is in the viewport. Supports AMD.
 [![Build Status](https://travis-ci.org/isuttell/in-viewport.svg)](https://travis-ci.org/isuttell/in-viewport)
 [![Coverage Status](https://img.shields.io/coveralls/isuttell/in-viewport.svg)](https://coveralls.io/r/isuttell/in-viewport)
 [![GitHub version](https://badge.fury.io/gh/isuttell%2Fin-viewport.svg)](http://badge.fury.io/gh/isuttell%2Fin-viewport)
+[![Codacy Badge](https://www.codacy.com/project/badge/c04d6ea7e43e4b46a2167a41f58bee8a)](https://www.codacy.com)
 
 ## Basic
 
