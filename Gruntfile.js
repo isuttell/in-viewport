@@ -91,20 +91,6 @@ module.exports = function (grunt)
                     logLevel: 'INFO'
                 }
             }
-        },
-        bump:
-        {
-            options:
-            {
-                files: ['package.json', 'bower.json'],
-                commit: true,
-                commitMessage: 'Release v%VERSION%',
-                createTag: true,
-                tagName: '%VERSION%',
-                tagMessage: 'Version %VERSION%',
-                pushTo: 'origin',
-                push: true
-            }
         }
     });
 
