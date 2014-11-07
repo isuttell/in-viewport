@@ -149,9 +149,9 @@
 
         // Call callbacks
         if(this._lastVisible !== this.visible && true === this.visible) {
-            this.options.onEnter(this.el);
+            this.options.onEnter.call(this, this.el);
         } else if(this._lastVisible !== this.visible && false === this.visible) {
-            this.options.onLeave(this.el);
+            this.options.onLeave.call(this, this.el);
         }
     };
 

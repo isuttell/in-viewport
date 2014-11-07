@@ -57,28 +57,29 @@
 	<script>
 
 		var element1 = InViewport.track($('.box-1'), {
-			onEnter: function($el) {
+			onEnter: function(el) {
 				$('.report-1').html('Visible');
 			},
-			onLeave: function($el) {
+			onLeave: function(el) {
 				$('.report-1').html('Not Visible');
 			}
 		});
 
 		var element2 = InViewport.track($('.box-2'), {
-			onEnter: function($el) {
+			onEnter: function(el) {
+				debugger;
 				$('.report-2').html('Visible');
 			},
-			onLeave: function($el) {
+			onLeave: function(el) {
 				$('.report-2').html('Not Visible');
 			}
 		});
 
 		var element3 = InViewport.track($('.box-3'), {
-			onEnter: function($el) {
+			onEnter: function(el) {
 				$('.report-3').html('Visible');
 			},
-			onLeave: function($el) {
+			onLeave: function(el) {
 				$('.report-3').html('Not Visible');
 			}
 		});
