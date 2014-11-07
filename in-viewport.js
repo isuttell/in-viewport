@@ -86,11 +86,6 @@
   var _waiting = false;
 
   /**
-   * Add Scroll Listenering
-   */
-  window.addEventListener('scroll', throttleScroll.bind(InViewport), false);
-
-  /**
    * Throttle Function
    */
   function throttleScroll() {
@@ -100,6 +95,11 @@
       setTimeout(scrollEvent.bind(this), InViewport.throttle);
     }
   }
+
+  /**
+   * Add Scroll Listenering
+   */
+  window.addEventListener('scroll', throttleScroll.bind(InViewport), false);
 
   /**
    * Triggered after throttling has passed
