@@ -118,7 +118,7 @@ module.exports = function (grunt)
 	|
 	*/
 
-    grunt.registerTask('lint', ['jshint', 'jsvalidate']);
+    grunt.registerTask('lint', ['jscs', 'jshint', 'jsvalidate']);
     grunt.registerTask('test', ['lint', 'karma:build']);
 
     grunt.registerTask('build', ['test', 'uglify']);
